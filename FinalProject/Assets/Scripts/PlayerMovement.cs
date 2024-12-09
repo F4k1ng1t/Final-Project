@@ -114,7 +114,8 @@ public class PlayerMovement : MonoBehaviour
             //        isRunning = false;
             //    }
 
-            //    xPrevious = x;
+            xPrevious = x;
+
         }
         else
         {
