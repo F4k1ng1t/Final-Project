@@ -22,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
 
     float xPrevious= 0;
 
+    //Check for running
+    bool isRunning = false;
+    bool isWalking = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -82,30 +85,37 @@ public class PlayerMovement : MonoBehaviour
         //is the character grounded
         if (GroundCheck())
         {
-            //if |cur stick - last stick| = 1 run
-            //elif cur stick - last stick < 0.5
+            //    Debug.Log(x - xPrevious);
+            //    if (Mathf.Abs(x - xPrevious) > 0.1f && !isRunning)
+            //    {
+            //        isRunning = true;
+            //        Run(x);
+            //    }
+            //    if(!isRunning && Mathf.Abs(x - xPrevious) < 0.1f)
+            //    {
+            //        isWalking = true;
+            //        Walk(x);
+            //    }
+            //    if (!isRunning && isWalking && Mathf.Abs(x) != 0)
+            //    {
+            //        Walk(x);
+            //    }
+            //    else if (!isRunning && isWalking && Mathf.Abs(x) == 0)
+            //    {
+            //        isWalking = false;
+            //    }
 
-            //if (x == 1 || x == -1)
-            //{
-            //    Run(x);
-            //    Debug.Log("why");
-            //}
-            //else if ((x > 0 && x < 1) || (x < 0 && x > -1))
-            //{
-            //    Debug.Log("bruh");
-            //    Walk(x);
-            //}
-            Debug.Log(x - xPrevious);
-            if (Mathf.Abs(x - xPrevious) <= 1)
-            {
-                Run(x);
-            }
-            else if (Mathf.Abs(x - xPrevious) > 0.5)
-            {
-                Walk(x);
-            }
+            //    if (isRunning && Mathf.Abs(x) >= 0.8f)
+            //    {
+            //        Run(x);
+            //    }
+            //    else if (isRunning && Mathf.Abs(x) <= 0.8f)
+            //    {
+            //        isRunning = false;
+            //    }
 
             xPrevious = x;
+
         }
         else
         {
@@ -116,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
 }
 public enum Characters
 {
-    Dash,
+    Blast,
     Gambler,
     Basic,
     Swordie
