@@ -2308,7 +2308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &880237127
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2640,7 +2640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &930292233
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5346,6 +5346,8 @@ MonoBehaviour:
   startGameButton: {fileID: 1173776398}
   roomListContainer: {fileID: 677894812}
   roomButtonPrefab: {fileID: 3367566591295512637, guid: 794c346098cbc294a928c66bc22b5750, type: 3}
+  singlePlayerScreen: {fileID: 880237126}
+  multiPlayercreen: {fileID: 2059237844}
 --- !u!4 &1594044674
 Transform:
   m_ObjectHideFlags: 0
