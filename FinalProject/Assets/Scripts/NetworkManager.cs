@@ -1,0 +1,55 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+/*
+using Photon.Pun;
+using Photon.Realtime;
+*/
+using UnityEditor.XR;
+
+public class NetworkManager : MonoBehaviour//PunCallbacks
+{
+    public int maxPlayers;
+
+    public static NetworkManager instance;
+    /*
+    void Awake()
+    {
+        if (instance != null && instance != this)
+            gameObject.SetActive(false);
+        else
+        {
+            instance = this;
+            //DontDestroyOnLoad(gameObject);
+        }
+    }
+
+    void Start()
+    {
+        PhotonNetwork.ConnectUsingSettings();
+    }
+
+    public override void OnConnectedToMaster()
+    {
+        PhotonNetwork.JoinLobby();
+    }
+
+    public void CreateRoom(string roomName)
+    {
+        RoomOptions options = new RoomOptions();
+        options.MaxPlayers = (byte)maxPlayers;
+        PhotonNetwork.CreateRoom(roomName, options);
+    }
+
+    public void JoinRoom(string roomName)
+    {
+        PhotonNetwork.JoinRoom(roomName);
+    }
+
+    [PunRPC]
+    public void ChangeScene(string sceneName)
+    {
+        PhotonNetwork.LoadLevel(sceneName);
+    }
+    */
+}

@@ -28,7 +28,7 @@ public class Menu : MonoBehaviour/*MonoBehaviourPunCallbacks, ILobbyCallbacks*/
     public RectTransform roomListContainer;
     public GameObject roomButtonPrefab;
     private List<GameObject> roomButtons = new List<GameObject>();
-    // private List<RoomInfo> roomList = new List<RoomInfo>();
+    //private List<RoomInfo> roomList = new List<RoomInfo>();
    
    
    [Header("Single or Multi Player")]
