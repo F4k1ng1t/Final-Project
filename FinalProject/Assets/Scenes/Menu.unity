@@ -3832,6 +3832,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499662961}
   m_CullTransparentMesh: 1
+--- !u!1 &1594044672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1594044674}
+  - component: {fileID: 1594044673}
+  m_Layer: 0
+  m_Name: _Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1594044673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594044672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f137461d9f5cf40a42d5ec38253b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainScreen: {fileID: 852805499}
+  createRoomScreen: {fileID: 2022337915}
+  lobbyScreen: {fileID: 102212779}
+  lobbyBrowserScreen: {fileID: 22877886}
+  createRoomButton: {fileID: 448797216}
+  findRoomButton: {fileID: 1881733939}
+  playerListText: {fileID: 979550411}
+  roomInfoText: {fileID: 17632128}
+  startGameButton: {fileID: 1173776398}
+  roomListContainer: {fileID: 677894812}
+  roomButtonPrefab: {fileID: 3367566591295512637, guid: 794c346098cbc294a928c66bc22b5750, type: 3}
+--- !u!4 &1594044674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594044672}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 555.30817, y: 285.49316, z: 2.6256685}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1711472376
 GameObject:
   m_ObjectHideFlags: 0
@@ -5053,3 +5108,4 @@ SceneRoots:
   - {fileID: 2064965064}
   - {fileID: 1056290119}
   - {fileID: 1229528293}
+  - {fileID: 1594044674}
