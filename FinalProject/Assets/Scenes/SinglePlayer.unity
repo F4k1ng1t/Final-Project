@@ -2295,7 +2295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5377760cdda47414e94226546f6eea6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leaderboardCanvas: {fileID: 0}
+  leaderboardCanvas: {fileID: 652500285}
   leaderboardEntries:
   - {fileID: 0}
   - {fileID: 0}
