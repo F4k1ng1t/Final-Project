@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
 using PlayFab;
 using PlayFab.ClientModels;
-*/
+
 using TMPro;
 using UnityEngine.Events;
+
+// ADD A LINE TO SWITCH SCENES TO THE SINGLEPLAYER SCREEN AND THEN ADD IT TO THE On Logged In () SECTION OF THE _PlayFabSystem
 
 public class LoginRegister : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class LoginRegister : MonoBehaviour
 
     public static LoginRegister instance;
     void Awake() { instance = this; }
-    /*
+    
     public void OnRegister()
     {
         RegisterPlayFabUserRequest registerRequest = new RegisterPlayFabUserRequest
@@ -70,5 +71,5 @@ public class LoginRegister : MonoBehaviour
         displayText.text = text;
         displayText.color = color;
     }
-    */
+    
 }
