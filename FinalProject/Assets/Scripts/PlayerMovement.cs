@@ -9,12 +9,14 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Components")]
     public Rigidbody2D rig;
+    public GameObject player;
     [Header("Movement Stats")]
     public float runSpeed;
     public float walkSpeed;
     public float airSpeed;
     public float shortHopHeight;
     public float fullHopHeight;
+    public float doubleJumpHeight;
     
     //Check for jumps???
     bool isGrounded;
@@ -44,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     void Run(float direction)
     {
         rig.velocity = new Vector2(direction * runSpeed, rig.velocity.y);
+        this.transform.localScale = new Vector2(direction / Mathf.Abs(direction), this.transform.localScale.y);
     }
     void Walk(float direction)
     {
@@ -53,9 +56,9 @@ public class PlayerMovement : MonoBehaviour
     {
 
     }
-    void ShortHop(float direction)
+    void ShortHop()
     {
-
+        rig.AddForce(new Vector2(0, shortHopHeight));
     }
     void FullHop(float direction)
     {
@@ -78,13 +81,18 @@ public class PlayerMovement : MonoBehaviour
     }
     void HandleInput()
     {
-        float rawX = Input.GetAxisRaw("Horizontal");
-        float x = Mathf.Round(rawX * 10f) / 10f;
-        //Debug.Log($"Rounded Input: {x}");
+        //float rawX = Input.GetAxisRaw("Horizontal");
+        
+        //Collecting Input
+        
+        float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
+        bool shift = Input.GetKey(KeyCode.LeftShift);
         //is the character grounded
         if (GroundCheck())
         {
+            //    May use this later, but for now we're going with keyboard controls
+
             //    Debug.Log(x - xPrevious);
             //    if (Mathf.Abs(x - xPrevious) > 0.1f && !isRunning)
             //    {
@@ -113,8 +121,34 @@ public class PlayerMovement : MonoBehaviour
             //    {
             //        isRunning = false;
             //    }
-
-            xPrevious = x;
+            //xPrevious = x;
+            
+            //Handling Input
+            if (x != 0) //Run
+            {
+                if (shift)
+                {
+                    isRunning = true;
+                }
+                else
+                {
+                    isWalking = true;
+                }
+            }
+            else
+            {
+                isRunning = false;
+                isWalking = false;
+            }
+            if (isRunning)
+            {
+                Run(x);
+            }
+            if (isWalking)
+            {
+                Walk(x);
+            }
+            
 
         }
         else
