@@ -4195,7 +4195,7 @@ GameObject:
   - component: {fileID: 1433145296}
   - component: {fileID: 1433145295}
   - component: {fileID: 1433145297}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TestJugglee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
