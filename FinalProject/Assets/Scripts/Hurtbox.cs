@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using TMPro;
 
 public class HurtBox : MonoBehaviourPunCallbacks
 {
@@ -11,8 +10,6 @@ public class HurtBox : MonoBehaviourPunCallbacks
     public GameObject attackPoint3;
 
     public int percent = 0;
-
-    public TextMeshProUGUI percentage;
 
     Rigidbody2D rig;
     private void Start()

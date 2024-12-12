@@ -338,10 +338,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: JohnLineman
       objectReference: {fileID: 0}
-    - target: {fileID: 4254426110907246433, guid: 124310a25d2625245ac582221dfee088, type: 3}
-      propertyPath: percentage
-      value: 
-      objectReference: {fileID: 1829475203}
     - target: {fileID: 5590025258076094255, guid: 124310a25d2625245ac582221dfee088, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -483,10 +479,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1229388450153240415, guid: b5b05cc6a19946f47a97c25adcd453d1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3458341859877691199, guid: b5b05cc6a19946f47a97c25adcd453d1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1229.303
@@ -526,22 +518,6 @@ PrefabInstance:
     - target: {fileID: 3458341859877691199, guid: b5b05cc6a19946f47a97c25adcd453d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5092436549359809357, guid: b5b05cc6a19946f47a97c25adcd453d1, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5092436549359809357, guid: b5b05cc6a19946f47a97c25adcd453d1, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5092436549359809357, guid: b5b05cc6a19946f47a97c25adcd453d1, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5092436549359809357, guid: b5b05cc6a19946f47a97c25adcd453d1, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 9047040521370169216, guid: b5b05cc6a19946f47a97c25adcd453d1, type: 3}
       propertyPath: m_Name
@@ -866,17 +842,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1564554677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1829475203 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5092436549359809357, guid: b5b05cc6a19946f47a97c25adcd453d1, type: 3}
-  m_PrefabInstance: {fileID: 427844673}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
