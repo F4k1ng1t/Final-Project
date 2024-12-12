@@ -19,15 +19,10 @@ public class HurtBox : MonoBehaviourPunCallbacks
     {
         rig = GetComponent<Rigidbody2D>();
     }
-    public void Update()
-    {
-        
-    }
     [PunRPC]
     void UpdatePercent(int amount)
     {
         percent += amount;
-        percentage.text = percent.ToString();
     }
     [PunRPC]
     public void Launch(float angle, int power, int direction)
