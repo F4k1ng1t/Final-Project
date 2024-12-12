@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Drift(float direction)
     {
-        
+        rig.velocity = new Vector2(direction * airSpeed, rig.velocity.y);
     }
     void HandleJumpInput()
     {
@@ -75,12 +75,12 @@ public class PlayerMovement : MonoBehaviour
             if (holdFrames <= shortHopFrames)
             {
                 ShortHop(); // Perform a short hop if within the threshold
-                Debug.Log(holdFrames);
+                //Debug.Log(holdFrames);
             }
             else
             {
                 FullHop(Input.GetAxis("Horizontal")); // Perform a full hop if beyond the threshold
-                Debug.Log(holdFrames);
+                //Debug.Log(holdFrames);
             }
             holdFrames = 0;
             Debug.Log(holdFrames);
@@ -99,11 +99,14 @@ public class PlayerMovement : MonoBehaviour
         rig.AddForce(new Vector2(0, fullHopHeight), ForceMode2D.Impulse);
         rig.velocity = new Vector2(airSpeed * direction, rig.velocity.y);
     }
-    void DoubleJump()
+    void DoubleJump(float direction)
     {
-
+        rig.velocity = new Vector2(rig.velocity.x, 0);
+        rig.AddForce(new Vector2(0, doubleJumpHeight), ForceMode2D.Impulse);
+        rig.velocity = new Vector2(airSpeed * direction, rig.velocity.y);
+        hasDoubleJump = false;
     }
-    bool GroundCheck()
+    public bool GroundCheck()
     {
         //Variables
         float rayDistance = this.transform.localScale.y * 1.52f;
@@ -114,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics2D.Raycast(this.transform.position, Vector2.down, rayDistance, groundLayer)) 
         {
             hasJumped = false;
+            hasDoubleJump = true;
             animator.SetBool("Air",false);
             return true;
         }
@@ -169,12 +173,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (shift)
                 {
-                    Debug.Log("Running");
+                    //Debug.Log("Running");
                     UpdateState(State.RUNNING);
                 }
                 else
                 {
-                    Debug.Log("walking");
+                    //Debug.Log("walking");
                     UpdateState(State.WALKING);
                 }
             }
@@ -224,7 +228,11 @@ public class PlayerMovement : MonoBehaviour
         else //Character is airborne
         {
             UpdateState(State.IDLEAIR);
-            
+            Drift(x);
+            if (Input.GetKeyDown(KeyCode.Space) && hasDoubleJump)
+            {
+                DoubleJump(x);
+            }
         }
 
     }
@@ -238,7 +246,6 @@ public class PlayerMovement : MonoBehaviour
         switch (state)
         {
             case State.WALKING:
-                Debug.Log("it made it here idk");
                 animator.SetTrigger("Walk");
                 break;
             case State.RUNNING:
