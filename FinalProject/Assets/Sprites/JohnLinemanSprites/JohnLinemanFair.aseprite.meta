@@ -390,117 +390,104 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Frame_0
+    - name: JohnLinemanFair_Frame_0
       frameIndex: 0
-      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 1
         width: 15
         height: 27
       spriteId: c2c72947b17eb544e8c4b91aff091f1a
-    - name: Frame_1
+    - name: JohnLinemanFair_Frame_1
       frameIndex: 1
-      additiveSortOrder: 0
       cellRect:
         x: 6
         y: 1
         width: 17
         height: 28
       spriteId: 64a4f5d6b6691d248a41a4b5fe095640
-    - name: Frame_2
+    - name: JohnLinemanFair_Frame_2
       frameIndex: 2
-      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 1
         width: 20
         height: 27
       spriteId: f1b9aa3437e66fc44b16caba7e506f4e
-    - name: Frame_3
+    - name: JohnLinemanFair_Frame_3
       frameIndex: 3
-      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 1
         width: 18
         height: 27
       spriteId: 3e9d6dec6a187f8439672ce4d00b0bd2
-    - name: Frame_4
+    - name: JohnLinemanFair_Frame_4
       frameIndex: 4
-      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 1
         width: 22
         height: 27
       spriteId: ab8520729e6363d45a318bb316880479
-    - name: Frame_5
+    - name: JohnLinemanFair_Frame_5
       frameIndex: 5
-      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 1
         width: 19
         height: 27
       spriteId: 9ffb255900fb9c1448e8840ef1a9e5df
-    - name: Frame_6
+    - name: JohnLinemanFair_Frame_6
       frameIndex: 6
-      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 1
         width: 17
         height: 27
       spriteId: 31c699f0aa692f744b11a61445793ac9
-    - name: Frame_7
+    - name: JohnLinemanFair_Frame_7
       frameIndex: 7
-      additiveSortOrder: 0
       cellRect:
         x: 2
         y: 3
         width: 22
         height: 25
       spriteId: 0aadb395a4b478a4d834dfdb4fb9fabf
-    - name: Frame_8
+    - name: JohnLinemanFair_Frame_8
       frameIndex: 8
-      additiveSortOrder: 0
       cellRect:
         x: 2
         y: 3
         width: 22
         height: 25
       spriteId: 3ef0b66d77f5d1744a576b7d5d4830c0
-    - name: Frame_9
+    - name: JohnLinemanFair_Frame_9
       frameIndex: 9
-      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 3
         width: 21
         height: 27
       spriteId: 9a46fc4fcc014ab4ca99879d963d77fd
-    - name: Frame_10
+    - name: JohnLinemanFair_Frame_10
       frameIndex: 10
-      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 3
         width: 24
         height: 27
       spriteId: 789d66b3c77984347a6dc5422f693423
-    - name: Frame_11
+    - name: JohnLinemanFair_Frame_11
       frameIndex: 11
-      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 3
         width: 25
         height: 27
       spriteId: 5a50c7393ead27941b442014a7a1aad0
-    - name: Frame_12
+    - name: JohnLinemanFair_Frame_12
       frameIndex: 12
-      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 3

@@ -190,27 +190,24 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Frame_0
+    - name: JohnLinemanJumpsquat_Frame_0
       frameIndex: 0
-      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 1
         width: 14
         height: 26
       spriteId: a0694d5a895beaf4687e8b83c242aee5
-    - name: Frame_1
+    - name: JohnLinemanJumpsquat_Frame_1
       frameIndex: 1
-      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 1
         width: 14
         height: 25
       spriteId: 706206804cebba14eab93e9c36647344
-    - name: Frame_2
+    - name: JohnLinemanJumpsquat_Frame_2
       frameIndex: 2
-      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 1
