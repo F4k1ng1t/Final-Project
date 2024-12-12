@@ -17,7 +17,7 @@ public class PlayerPlayfabStuff : MonoBehaviour
     public TextMeshProUGUI curTimeText;
     private double curTimeNum;
 
-    public Rigidbody jugglingGuy;
+    public Rigidbody2D jugglingGuy;
     public GameObject jugglee;
     bool grounded;
     public GameObject ground;
@@ -26,7 +26,7 @@ public class PlayerPlayfabStuff : MonoBehaviour
     void Awake()
     {
 
-       jugglingGuy = GetComponent<Rigidbody>();
+       jugglingGuy = GetComponent<Rigidbody2D>();
         jugglingGuy.isKinematic = true;
     }
     void Update()
@@ -46,7 +46,7 @@ public class PlayerPlayfabStuff : MonoBehaviour
         jugglingGuy.isKinematic = false;
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject == ground)
         {
