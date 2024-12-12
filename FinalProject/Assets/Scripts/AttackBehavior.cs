@@ -95,7 +95,7 @@ public class AttackBehavior : MonoBehaviourPunCallbacks
         if (targetPhotonView != null)
         {
             // Update the percent on the target
-            this.photonView.RPC("UpdatePercent", targetPhotonView.photonPlayer, 5f);
+            this.photonView.RPC("UpdatePercent", targetPhotonView.photonPlayer, 5);
 
             // Launch the target
             int power = (int)(10f + 0.2f * reciever.GetComponent<HurtBox>().percent);
@@ -107,15 +107,39 @@ public class AttackBehavior : MonoBehaviourPunCallbacks
             Debug.LogError("PhotonView not found on receiver!");
         }
     }
-    public void ForwardAir(GameObject reciever)
+    public void ForwardAir(GameObject receiver)
     {
-        reciever.GetComponent<HurtBox>().percent += 10;
-        reciever.GetComponent<HurtBox>().Launch(-90, (int)(5f + 0.5f * reciever.GetComponent<HurtBox>().percent), (int)this.transform.localScale.x);
+        PlayerMovement targetPhotonView = receiver.GetComponent<PlayerMovement>();
+
+        if (targetPhotonView != null)
+        {
+            // Update the percent on the target
+            this.photonView.RPC("UpdatePercent", targetPhotonView.photonPlayer, 10);
+
+            // Launch the target
+            int power = (int)(5f + 0.5f * receiver.GetComponent<HurtBox>().percent);
+            int direction = (int)this.transform.localScale.x;
+            this.photonView.RPC("Launch", targetPhotonView.photonPlayer, -90f, power, direction);
+        }
+        else
+        {
+            Debug.LogError("PhotonView not found on receiver!");
+        }
     }
-    public void BackAir(GameObject reciever)
+
+    public void BackAir(GameObject receiver)
     {
-        reciever.GetComponent<HurtBox>().percent += 7;
-        reciever.GetComponent<HurtBox>().Launch(30, (int)(5f + 0.3f * reciever.GetComponent<HurtBox>().percent), -(int)this.transform.localScale.x);
+        HurtBox targetPhotonView = receiver.GetComponent<HurtBox>();
+
+        
+            // Update the percent on the target
+            targetPhotonView.photonView.RPC("UpdatePercent", RpcTarget.All, 7);
+
+            // Launch the target
+            int power = (int)(5f + 0.3f * receiver.GetComponent<HurtBox>().percent);
+            int direction = -(int)this.transform.localScale.x;
+            targetPhotonView.photonView.RPC("Launch", RpcTarget.All, 30f, power, direction);
+
     }
     void UpdateState(Attacks state2update)
     {
