@@ -13,7 +13,7 @@ public enum State
     HITSTUN,
     INACTIONABLE
 }
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement1 : MonoBehaviour
 {
     State state = State.IDLEAIR;
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HurtBox : MonoBehaviour
+public class HurtBox1 : MonoBehaviour
 {
     public GameObject attackPoint1;
     public GameObject attackPoint2;

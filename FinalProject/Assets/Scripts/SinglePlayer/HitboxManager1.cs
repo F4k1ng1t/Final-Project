@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitboxManager : MonoBehaviour
+public class HitboxManager1 : MonoBehaviour
 {
     // Store all colliders attached to child objects of the player (hitboxes)
     private Collider2D[] hitboxes;

@@ -15,7 +15,7 @@ public enum Attacks
     //UpSpecial
 
 }
-public class AttackBehavior : MonoBehaviour
+public class AttackBehavior1 : MonoBehaviour
 {
 
     public Attacks state = Attacks.None;
