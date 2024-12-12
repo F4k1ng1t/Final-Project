@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -37,12 +38,16 @@ public class PlayerPlayfabStuff : MonoBehaviour
         curTimeText.text = (Time.time - startTime).ToString("F2");
 
     }
-    public void Begin()
+    public async void Begin()
     {
-        startTime = Time.time;
-        isPlaying = true;
         playButton.SetActive(false);
         leaderboard.SetActive(false);
+
+        await Task.Delay(2000);
+
+        startTime = Time.time;
+        isPlaying = true;
+        
         jugglingGuy.isKinematic = false;
     }
 
