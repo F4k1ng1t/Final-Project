@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
 using Photon.Pun;
 using Photon.Realtime;
-*/
+
 using UnityEditor.XR;
 
-public class NetworkManager : MonoBehaviour//PunCallbacks
+public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public int maxPlayers;
 
     public static NetworkManager instance;
-    /*
+    
     void Awake()
     {
         if (instance != null && instance != this)
@@ -51,5 +50,5 @@ public class NetworkManager : MonoBehaviour//PunCallbacks
     {
         PhotonNetwork.LoadLevel(sceneName);
     }
-    */
+    
 }

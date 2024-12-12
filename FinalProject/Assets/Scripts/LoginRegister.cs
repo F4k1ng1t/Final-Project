@@ -48,7 +48,7 @@ public class LoginRegister : MonoBehaviour
 );
     }
 
-    public async Task OnLoginButtonAsync()
+    public void OnLoginButton()
     {
         LoginWithPlayFabRequest loginRequest = new LoginWithPlayFabRequest
         {
@@ -68,7 +68,7 @@ public class LoginRegister : MonoBehaviour
             error => SetDisplayText(error.ErrorMessage, Color.red));
 
 
-        await Task.Delay(2000);
+      //  await Task.Delay(2000);
         SceneManager.LoadScene("SinglePlayer");
 
     }

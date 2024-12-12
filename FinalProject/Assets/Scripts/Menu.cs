@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-/*
 using Photon.Pun;
 using Photon.Realtime;
-*/
-public class Menu : MonoBehaviour/*MonoBehaviourPunCallbacks, ILobbyCallbacks*/
+
+public class Menu : MonoBehaviourPunCallbacks, ILobbyCallbacks
 {
     [Header("Screens")]
+    public GameObject startScreen;
     public GameObject mainScreen;
     public GameObject createRoomScreen;
     public GameObject lobbyScreen;
@@ -28,24 +28,31 @@ public class Menu : MonoBehaviour/*MonoBehaviourPunCallbacks, ILobbyCallbacks*/
     public RectTransform roomListContainer;
     public GameObject roomButtonPrefab;
     private List<GameObject> roomButtons = new List<GameObject>();
-    //private List<RoomInfo> roomList = new List<RoomInfo>();
+    private List<RoomInfo> roomList = new List<RoomInfo>();
    
    
    [Header("Single or Multi Player")]
    public GameObject singlePlayerScreen;
-   public GameObject multiPlayercreen;
-    /*
-  void OnSinglePlayerButton()
+   public GameObject multiPlayerScreen;
+    
+  public void OnSinglePlayerButton()
   {
+      startScreen.SetActive(false);
       SetScreen(singlePlayerScreen);
   }
 
-  void OnMultiPlayerButton()
+ public void OnMultiPlayerButton()
   {
-      SetScreen(multiPlayerScreen);
+        startScreen.SetActive(false);
+        SetScreen(multiPlayerScreen);
+        SetScreen(mainScreen);
+       
   }
 
-
+    public void OnBackToStartButton()
+    {
+        SetScreen(startScreen);
+    }
 
   void Start()
   {
@@ -90,13 +97,18 @@ public class Menu : MonoBehaviour/*MonoBehaviourPunCallbacks, ILobbyCallbacks*/
 
   public void OnCreateRoomButton()
   {
+        
       SetScreen(createRoomScreen);
-  }
+        mainScreen.SetActive(false);
+
+    }
 
   public void OnFindRoomButton()
   {
-      SetScreen(lobbyBrowserScreen);
-  }
+        
+        SetScreen(lobbyBrowserScreen);
+        mainScreen.SetActive(false);
+    }
 
   public void OnBackButton()
   {
@@ -138,7 +150,7 @@ public class Menu : MonoBehaviour/*MonoBehaviourPunCallbacks, ILobbyCallbacks*/
       PhotonNetwork.CurrentRoom.IsOpen = false;
       PhotonNetwork.CurrentRoom.IsVisible = false;
 
-      NetworkManager.instance.photonView.RPC("ChangeScene", RpcTarget.All, "Game");
+      NetworkManager.instance.photonView.RPC("ChangeScene", RpcTarget.All, "MultiPlayer");
   }
 
   public void OnLeaveLobbyButton()
@@ -193,6 +205,6 @@ public class Menu : MonoBehaviour/*MonoBehaviourPunCallbacks, ILobbyCallbacks*/
   {
       roomList = allRooms;
   }
-   */
+   
 }
 
