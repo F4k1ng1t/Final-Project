@@ -21,13 +21,13 @@ public class HurtBox : MonoBehaviourPunCallbacks
     }
     public void Update()
     {
-        percentage.text = percent.ToString();
+        
     }
     [PunRPC]
     void UpdatePercent(int amount)
     {
         percent += amount;
-       
+        percentage.text = percent.ToString();
     }
     [PunRPC]
     public void Launch(float angle, int power, int direction)
