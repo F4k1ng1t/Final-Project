@@ -19,15 +19,21 @@ public class PlayerPlayfabStuff : MonoBehaviour
 
     public Rigidbody jugglingGuy;
     public GameObject jugglee;
-    bool IsGrounded;
+    bool grounded;
+    public GameObject ground;
 
 
-    void Start()
+    void Awake()
     {
-        jugglingGuy = GetComponent<Rigidbody>();
+
+       jugglingGuy = GetComponent<Rigidbody>();
+        jugglingGuy.isKinematic = true;
     }
     void Update()
     {
+        if (!isPlaying)
+            return;
+
         curTimeText.text = (Time.time - startTime).ToString("F2");
 
     }
@@ -40,23 +46,21 @@ public class PlayerPlayfabStuff : MonoBehaviour
         jugglingGuy.isKinematic = false;
     }
 
-    void OnTriggerStay(Collider jugglee)
+    void OnCollisionEnter(Collision collision)
     {
-        if (jugglee.transform.tag == "Ground")
+        if (collision.gameObject == ground)
         {
-            IsGrounded = true;
+            // grounded = true;
             Debug.Log("Grounded");
             End();
-        }
-        else
-        {
-            IsGrounded = false;
-            Debug.Log("Not Grounded!");
+
+            
         }
     }
 
     void End()
     {
+        Debug.Log("StartedEnd");
         timeTaken = Time.time - startTime;
         isPlaying = false;
         playButton.SetActive(true);
