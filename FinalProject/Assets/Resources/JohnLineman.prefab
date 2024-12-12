@@ -320,6 +320,7 @@ MonoBehaviour:
   attackPoint2: {fileID: 4976626189222196395}
   attackPoint3: {fileID: 2943537949810301750}
   percent: 0
+  percentage: {fileID: 0}
 --- !u!114 &5590025258076094255
 MonoBehaviour:
   m_ObjectHideFlags: 0
