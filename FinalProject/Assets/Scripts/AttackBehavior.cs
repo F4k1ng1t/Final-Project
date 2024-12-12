@@ -95,12 +95,12 @@ public class AttackBehavior : MonoBehaviourPunCallbacks
         if (targetPhotonView != null)
         {
             // Update the percent on the target
-            photonView.RPC("UpdatePercent", targetPhotonView.photonPlayer, 5f);
+            this.photonView.RPC("UpdatePercent", targetPhotonView.photonPlayer, 5f);
 
             // Launch the target
             int power = (int)(10f + 0.2f * reciever.GetComponent<HurtBox>().percent);
             int direction = (int)this.transform.localScale.x;
-            photonView.RPC("Launch", targetPhotonView.photonPlayer, 90f, power, direction);
+            this.photonView.RPC("Launch", targetPhotonView.photonPlayer, 90f, power, direction);
         }
         else
         {
