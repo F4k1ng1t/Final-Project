@@ -17,6 +17,15 @@ public class PlayerPlayfabStuff : MonoBehaviour
     public TextMeshProUGUI curTimeText;
     private double curTimeNum;
 
+    public Rigidbody jugglingGuy;
+    public GameObject jugglee;
+    bool IsGrounded;
+
+
+    void Start()
+    {
+        jugglingGuy = GetComponent<Rigidbody>();
+    }
     void Update()
     {
         curTimeText.text = (Time.time - startTime).ToString("F2");
@@ -28,6 +37,22 @@ public class PlayerPlayfabStuff : MonoBehaviour
         isPlaying = true;
         playButton.SetActive(false);
         leaderboard.SetActive(false);
+        jugglingGuy.isKinematic = false;
+    }
+
+    void OnTriggerStay(Collider jugglee)
+    {
+        if (jugglee.transform.tag == "Ground")
+        {
+            IsGrounded = true;
+            Debug.Log("Grounded");
+            End();
+        }
+        else
+        {
+            IsGrounded = false;
+            Debug.Log("Not Grounded!");
+        }
     }
 
     void End()
