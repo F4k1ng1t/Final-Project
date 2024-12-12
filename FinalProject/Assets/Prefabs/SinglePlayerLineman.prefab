@@ -90,13 +90,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5800185783983120343}
   - component: {fileID: 471830224421557163}
-  - component: {fileID: 8907074453993560709}
+  - component: {fileID: 8213908986514530391}
   - component: {fileID: 6228019940950008718}
   - component: {fileID: 1410294887160124799}
   - component: {fileID: 8469387626804117888}
-  - component: {fileID: 131010804840734090}
-  - component: {fileID: 4254426110907246433}
-  - component: {fileID: 5590025258076094255}
+  - component: {fileID: 2655229523528347969}
+  - component: {fileID: 2287216863792635110}
+  - component: {fileID: 8987570361724941839}
   m_Layer: 6
   m_Name: SinglePlayerLineman
   m_TagString: Player
@@ -112,7 +112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2722644081432245898}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.91, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -174,7 +174,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8907074453993560709
+--- !u!114 &8213908986514530391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,17 +183,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2722644081432245898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b707bcb5435542347b91492d3a838643, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c5e0e457c325e345ac77b5947de4975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rig: {fileID: 6228019940950008718}
   animator: {fileID: 8469387626804117888}
   runSpeed: 20
-  walkSpeed: 7
-  airSpeed: 15
+  walkSpeed: 10
+  airSpeed: 7
   shortHopHeight: 10
   fullHopHeight: 20
-  doubleJumpHeight: 20
+  doubleJumpHeight: 15
 --- !u!50 &6228019940950008718
 Rigidbody2D:
   serializedVersion: 4
@@ -287,7 +287,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &131010804840734090
+--- !u!114 &2655229523528347969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,11 +296,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2722644081432245898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aa03472f94fda24e9a775b74ea4e105, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f382656957b4da4ea5e14efb4f424d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
---- !u!114 &4254426110907246433
+--- !u!114 &2287216863792635110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -309,14 +309,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2722644081432245898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6631d0c776d8c6242b046e6d2edc3631, type: 3}
+  m_Script: {fileID: 11500000, guid: 724b8c9d3e3d69949b0a5b9873c89b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint1: {fileID: 928291033785557972}
   attackPoint2: {fileID: 4976626189222196395}
   attackPoint3: {fileID: 2943537949810301750}
   percent: 0
---- !u!114 &5590025258076094255
+--- !u!114 &8987570361724941839
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2722644081432245898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94dc8372716fa3d4ca4d72ab17fea76a, type: 3}
+  m_Script: {fileID: 11500000, guid: 85d2edba3737de048907b9bac2963b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2943537949810301750

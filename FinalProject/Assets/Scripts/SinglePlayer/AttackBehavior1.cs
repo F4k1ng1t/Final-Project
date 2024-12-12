@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Attacks
+public enum Attacks1
 {
     None,
     ForwardAir,
@@ -18,14 +18,14 @@ public enum Attacks
 public class AttackBehavior1 : MonoBehaviour
 {
 
-    public Attacks state = Attacks.None;
-    PlayerMovement movement;
+    public Attacks1 state = Attacks1.None;
+    PlayerMovement1 movement;
     Animator animator;
     
     void Start()
     {
         animator = this.GetComponent<Animator>();
-        movement = this.GetComponent<PlayerMovement>();
+        movement = this.GetComponent<PlayerMovement1>();
     }
     void Update()
     {
@@ -44,35 +44,35 @@ public class AttackBehavior1 : MonoBehaviour
         }
         if (!movement.GroundCheck() && (Input.GetKeyDown(KeyCode.J) && direction == stickdirection) )
         {
-            UpdateState(Attacks.ForwardAir);
+            UpdateState(Attacks1.ForwardAir);
         }
         if (!movement.GroundCheck() && (Input.GetKeyDown(KeyCode.J) && direction == -stickdirection))
         {
-            UpdateState(Attacks.BackAir);
+            UpdateState(Attacks1.BackAir);
         }
         if (movement.GroundCheck())
         {
-            if (state == Attacks.ForwardAir || state == Attacks.BackAir || state == Attacks.UpAir) //if one of these attacks is interrupted by hitting the ground
+            if (state == Attacks1.ForwardAir || state == Attacks1.BackAir || state == Attacks1.UpAir) //if one of these attacks is interrupted by hitting the ground
             {
                 ResetState();
             }
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.J) && state == Attacks.None)
+            if (Input.GetKeyDown(KeyCode.J) && state == Attacks1.None)
             {
                 if (Mathf.Sign(y) == 1 && y != 0) //up air
                 {
-                    UpdateState(Attacks.UpAir);
+                    UpdateState(Attacks1.UpAir);
                     
                 }
                 else if (direction == stickdirection) //forward air
                 {
-                    UpdateState(Attacks.ForwardAir);
+                    UpdateState(Attacks1.ForwardAir);
                 }
                 else if (direction == -stickdirection) //back air
                 {
-                    UpdateState(Attacks.BackAir);
+                    UpdateState(Attacks1.BackAir);
                 }
                 
                 else //neutral air
@@ -84,39 +84,39 @@ public class AttackBehavior1 : MonoBehaviour
     }
     public void UpAir(GameObject reciever)
     {
-        reciever.GetComponent<HurtBox>().percent += 5;
-        reciever.GetComponent<HurtBox>().Launch(90, (int)(10f + 0.2f * reciever.GetComponent<HurtBox>().percent), (int)this.transform.localScale.x);
+        reciever.GetComponent<HurtBox1>().percent += 5;
+        reciever.GetComponent<HurtBox1>().Launch(90, (int)(10f + 0.2f * reciever.GetComponent<HurtBox1>().percent), (int)this.transform.localScale.x);
     }
     public void ForwardAir(GameObject reciever)
     {
-        reciever.GetComponent<HurtBox>().percent += 10;
-        reciever.GetComponent<HurtBox>().Launch(-90, (int)(5f + 0.5f * reciever.GetComponent<HurtBox>().percent), (int)this.transform.localScale.x);
+        reciever.GetComponent<HurtBox1>().percent += 10;
+        reciever.GetComponent<HurtBox1>().Launch(-90, (int)(5f + 0.5f * reciever.GetComponent<HurtBox1>().percent), (int)this.transform.localScale.x);
     }
     public void BackAir(GameObject reciever)
     {
-        reciever.GetComponent<HurtBox>().percent += 7;
-        reciever.GetComponent<HurtBox>().Launch(30, (int)(5f + 0.3f * reciever.GetComponent<HurtBox>().percent), -(int)this.transform.localScale.x);
+        reciever.GetComponent<HurtBox1>().percent += 7;
+        reciever.GetComponent<HurtBox1>().Launch(30, (int)(5f + 0.3f * reciever.GetComponent<HurtBox1>().percent), -(int)this.transform.localScale.x);
     }
-    void UpdateState(Attacks state2update)
+    void UpdateState(Attacks1 state2update)
     {
         state = state2update;
         Animate();
     }
     public void ResetState()
     {
-        state = Attacks.None;
+        state = Attacks1.None;
     }
     void Animate()
     {
         switch (state)
         {
-            case Attacks.ForwardAir:
+            case Attacks1.ForwardAir:
                 animator.SetTrigger("ForwardAir");
                 break;
-            case Attacks.BackAir:
+            case Attacks1.BackAir:
                 animator.SetTrigger("BackAir");
                 break;
-            case Attacks.UpAir:
+            case Attacks1.UpAir:
                 animator.SetTrigger("UpAir");
                 break;
 

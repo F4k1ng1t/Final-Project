@@ -6,13 +6,13 @@ public class HitboxManager1 : MonoBehaviour
 {
     // Store all colliders attached to child objects of the player (hitboxes)
     private Collider2D[] hitboxes;
-    AttackBehavior attackBehavior;
+    AttackBehavior1 attackBehavior;
 
     void Start()
     {
         // Collect all colliders that are children of this GameObject (Player)
         hitboxes = GetComponentsInChildren<Collider2D>();
-        attackBehavior = GetComponent<AttackBehavior>();
+        attackBehavior = this.GetComponent<AttackBehavior1>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -31,15 +31,15 @@ public class HitboxManager1 : MonoBehaviour
                     
                 }
             }
-            if (attackBehavior.state == Attacks.ForwardAir)
+            if (attackBehavior.state == Attacks1.ForwardAir)
             {
                 attackBehavior.ForwardAir(other.gameObject);
             }
-            else if (attackBehavior.state == Attacks.UpAir)
+            else if (attackBehavior.state == Attacks1.UpAir)
             {
                 attackBehavior.UpAir(other.gameObject);
             }
-            else if(attackBehavior.state == Attacks.BackAir)
+            else if(attackBehavior.state == Attacks1.BackAir)
             {
                 attackBehavior.BackAir(other.gameObject);
                 Debug.Log(attackBehavior.state);

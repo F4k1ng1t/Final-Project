@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public enum State
+public enum State1
 {
     RUNNING,
     WALKING,
@@ -15,7 +15,7 @@ public enum State
 }
 public class PlayerMovement1 : MonoBehaviour
 {
-    State state = State.IDLEAIR;
+    State1 state = State1.IDLEAIR;
 
     [Header("Components")]
     public Rigidbody2D rig;
@@ -121,7 +121,7 @@ public class PlayerMovement1 : MonoBehaviour
             animator.SetBool("Air",false);
             return true;
         }
-        UpdateState(State.IDLEAIR);
+        UpdateState(State1.IDLEAIR);
         return false;
     }
     void HandleInput()
@@ -174,23 +174,23 @@ public class PlayerMovement1 : MonoBehaviour
                 if (shift)
                 {
                     //Debug.Log("Running");
-                    UpdateState(State.RUNNING);
+                    UpdateState(State1.RUNNING);
                 }
                 else
                 {
                     //Debug.Log("walking");
-                    UpdateState(State.WALKING);
+                    UpdateState(State1.WALKING);
                 }
             }
             else
             {
-                UpdateState(State.IDLEGROUND);
+                UpdateState(State1.IDLEGROUND);
             }
-            if (state == State.RUNNING)
+            if (state == State1.RUNNING)
             {
                 Run(x);
             }
-            if (state == State.WALKING)
+            if (state == State1.WALKING)
             {
                 Walk(x);
             }
@@ -203,7 +203,7 @@ public class PlayerMovement1 : MonoBehaviour
             {
                 isJumping = true;
                 holdFrames = 0; // Reset the frame counter
-                UpdateState(State.JUMPSQUAT);
+                UpdateState(State1.JUMPSQUAT);
             }
 
             if (isJumping && Input.GetKey(KeyCode.Space))
@@ -227,7 +227,7 @@ public class PlayerMovement1 : MonoBehaviour
         }
         else //Character is airborne
         {
-            UpdateState(State.IDLEAIR);
+            UpdateState(State1.IDLEAIR);
             Drift(x);
             if (Input.GetKeyDown(KeyCode.Space) && hasDoubleJump)
             {
@@ -236,7 +236,7 @@ public class PlayerMovement1 : MonoBehaviour
         }
 
     }
-    void UpdateState(State stateToUpdate)
+    void UpdateState(State1 stateToUpdate)
     {
         state = stateToUpdate;
         Animate();
@@ -245,19 +245,19 @@ public class PlayerMovement1 : MonoBehaviour
     {
         switch (state)
         {
-            case State.WALKING:
+            case State1.WALKING:
                 animator.SetTrigger("Walk");
                 break;
-            case State.RUNNING:
+            case State1.RUNNING:
                 animator.SetTrigger("Run");
                 break;
-            case State.IDLEGROUND:
+            case State1.IDLEGROUND:
                 animator.SetTrigger("Idle");
                 break;
-            case State.JUMPSQUAT:
+            case State1.JUMPSQUAT:
                 animator.SetTrigger("Jumpsquat");
                 break;
-            case State.IDLEAIR:
+            case State1.IDLEAIR:
                 animator.SetBool("Air",true);
                 break;
         }

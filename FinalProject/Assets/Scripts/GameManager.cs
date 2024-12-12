@@ -83,7 +83,7 @@ using System.Linq;
             PlayerMovement player = GetPlayer(playerId);
 
             // set the UI to show who's won
-            GameUI.instance.SetWinText(player.photonPlayer.NickName);
+            //GameUI.instance.SetWinText(player.photonPlayer.NickName);
 
             Invoke("GoBackToMenu", 3.0f);
         }
