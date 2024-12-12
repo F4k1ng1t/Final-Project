@@ -24,7 +24,7 @@ public class HurtBox : MonoBehaviour
             return;
         }
     }
-    public void Launch(float angle, int power)
+    public void Launch(float angle, int power, int direction)
     {
         // Convert angle from degrees to radians
         float radians = angle * Mathf.Deg2Rad;
@@ -34,6 +34,6 @@ public class HurtBox : MonoBehaviour
         float y = Mathf.Sin(radians);
 
         // Apply force to the rigidbody in the direction of the launch
-        rig.AddForce(new Vector2(x * power, y * power), ForceMode2D.Impulse);
+        rig.AddForce(new Vector2(x * power * direction, y * power), ForceMode2D.Impulse);
     }
 }

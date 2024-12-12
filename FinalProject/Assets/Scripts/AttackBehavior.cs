@@ -85,7 +85,17 @@ public class AttackBehavior : MonoBehaviour
     public void UpAir(GameObject reciever)
     {
         reciever.GetComponent<HurtBox>().percent += 5;
-        reciever.GetComponent<HurtBox>().Launch(90, (int)(5f + 0.5f * reciever.GetComponent<HurtBox>().percent));
+        reciever.GetComponent<HurtBox>().Launch(90, (int)(10f + 0.2f * reciever.GetComponent<HurtBox>().percent), (int)this.transform.localScale.x);
+    }
+    public void ForwardAir(GameObject reciever)
+    {
+        reciever.GetComponent<HurtBox>().percent += 10;
+        reciever.GetComponent<HurtBox>().Launch(-90, (int)(5f + 0.5f * reciever.GetComponent<HurtBox>().percent), (int)this.transform.localScale.x);
+    }
+    public void BackAir(GameObject reciever)
+    {
+        reciever.GetComponent<HurtBox>().percent += 7;
+        reciever.GetComponent<HurtBox>().Launch(30, (int)(5f + 0.5f * reciever.GetComponent<HurtBox>().percent), -(int)this.transform.localScale.x);
     }
     void UpdateState(Attacks state2update)
     {

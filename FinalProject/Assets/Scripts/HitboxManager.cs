@@ -33,7 +33,7 @@ public class HitboxManager : MonoBehaviour
             }
             if (attackBehavior.state == Attacks.ForwardAir)
             {
-                other.gameObject.GetComponent<HurtBox>().Launch(-90, 100);
+                attackBehavior.ForwardAir(other.gameObject);
             }
             else if (attackBehavior.state == Attacks.UpAir)
             {
@@ -41,7 +41,7 @@ public class HitboxManager : MonoBehaviour
             }
             else if(attackBehavior.state == Attacks.BackAir)
             {
-                other.gameObject.GetComponent<HurtBox>().Launch(30, 50);
+                attackBehavior.BackAir(other.gameObject);
                 Debug.Log(attackBehavior.state);
             }
             else
