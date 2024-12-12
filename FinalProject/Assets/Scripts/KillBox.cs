@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KillBox : MonoBehaviour
 {
-    void OnCollisionExit(Collision collision)
+    void OnCollisionExit2D(Collision2D collision)
     {
         
     }
