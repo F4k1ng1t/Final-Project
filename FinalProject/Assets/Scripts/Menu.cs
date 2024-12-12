@@ -52,6 +52,7 @@ public class Menu : MonoBehaviourPunCallbacks, ILobbyCallbacks
     public void OnBackToStartButton()
     {
         SetScreen(startScreen);
+        singlePlayerScreen.SetActive(false);
     }
 
   void Start()
