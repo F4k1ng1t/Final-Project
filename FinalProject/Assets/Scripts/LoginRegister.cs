@@ -9,8 +9,6 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
 
-// ADD A LINE TO SWITCH SCENES TO THE SINGLEPLAYER SCREEN AND THEN ADD IT TO THE On Logged In () SECTION OF THE _PlayFabSystem
-//The above should be good in the login script now
 
 public class LoginRegister : MonoBehaviour
 {
@@ -48,7 +46,7 @@ public class LoginRegister : MonoBehaviour
 );
     }
 
-    public async Task OnLoginButtonAsync()
+    public void OnLoginButton()
     {
         LoginWithPlayFabRequest loginRequest = new LoginWithPlayFabRequest
         {
@@ -68,7 +66,7 @@ public class LoginRegister : MonoBehaviour
             error => SetDisplayText(error.ErrorMessage, Color.red));
 
 
-        await Task.Delay(2000);
+      //  await Task.Delay(2000);
         SceneManager.LoadScene("SinglePlayer");
 
     }

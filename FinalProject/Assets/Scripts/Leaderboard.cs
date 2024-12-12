@@ -14,11 +14,14 @@ public class Leaderboard : MonoBehaviour
     public static Leaderboard instance;
     void Awake() { instance = this; }
 
-    public void OnLoggedIn()
-    {
-        leaderboardCanvas.SetActive(true);
-        DisplayLeaderboard();
-    }
+    
+     public void OnLoggedIn()
+     {
+         Debug.Log("Logged In");
+         leaderboardCanvas.SetActive(true);
+         DisplayLeaderboard();
+     }
+    
 
     public void DisplayLeaderboard()
     {
