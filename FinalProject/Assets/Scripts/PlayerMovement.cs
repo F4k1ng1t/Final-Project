@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
         id = player.ActorNumber;
 
         GameManager.instance.players[id - 1] = this;
-
+        GameManager.instance.targetgroup.AddMember(this.transform, 1, 4);
 
         if (!photonView.IsMine)
             rig.isKinematic = true;
