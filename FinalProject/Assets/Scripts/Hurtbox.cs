@@ -17,6 +17,11 @@ public class HurtBox : MonoBehaviourPunCallbacks
         rig = GetComponent<Rigidbody2D>();
     }
     [PunRPC]
+    void UpdatePercent(int amount)
+    {
+        percent += amount;
+    }
+    [PunRPC]
     public void Launch(float angle, int power, int direction)
     {
         // Convert angle from degrees to radians

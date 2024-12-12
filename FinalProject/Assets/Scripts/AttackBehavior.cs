@@ -90,8 +90,22 @@ public class AttackBehavior : MonoBehaviourPunCallbacks
     }
     public void UpAir(GameObject reciever)
     {
-        reciever.GetComponent<HurtBox>().percent += 5;
-        reciever.GetComponent<HurtBox>().Launch(90, (int)(10f + 0.2f * reciever.GetComponent<HurtBox>().percent), (int)this.transform.localScale.x);
+        PlayerMovement targetPhotonView = reciever.GetComponent<PlayerMovement>();
+
+        if (targetPhotonView != null)
+        {
+            // Update the percent on the target
+            photonView.RPC("UpdatePercent", targetPhotonView.photonPlayer, 5f);
+
+            // Launch the target
+            int power = (int)(10f + 0.2f * reciever.GetComponent<HurtBox>().percent);
+            int direction = (int)this.transform.localScale.x;
+            photonView.RPC("Launch", targetPhotonView.photonPlayer, 90f, power, direction);
+        }
+        else
+        {
+            Debug.LogError("PhotonView not found on receiver!");
+        }
     }
     public void ForwardAir(GameObject reciever)
     {

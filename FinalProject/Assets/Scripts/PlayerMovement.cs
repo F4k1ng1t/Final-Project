@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
         GameManager.instance.targetgroup.AddMember(this.transform, 1, 4);
 
         if (!photonView.IsMine)
-            rig.isKinematic = true;
+            rig.simulated = false;
     }
     void Update()
     {
