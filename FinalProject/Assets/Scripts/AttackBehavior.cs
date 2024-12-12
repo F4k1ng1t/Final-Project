@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public enum Attacks
 {
@@ -15,7 +16,7 @@ public enum Attacks
     //UpSpecial
 
 }
-public class AttackBehavior : MonoBehaviour
+public class AttackBehavior : MonoBehaviourPunCallbacks
 {
 
     public Attacks state = Attacks.None;
@@ -29,11 +30,16 @@ public class AttackBehavior : MonoBehaviour
     }
     void Update()
     {
+        if (!photonView.IsMine)
+        {
+            return;
+        }
         HandleInput();
         Debug.Log(state);
     }
     void HandleInput()
     {
+        
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         float direction = this.transform.localScale.x;

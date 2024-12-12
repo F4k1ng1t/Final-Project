@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class HurtBox : MonoBehaviour
+public class HurtBox : MonoBehaviourPunCallbacks
 {
     public GameObject attackPoint1;
     public GameObject attackPoint2;
@@ -15,15 +16,7 @@ public class HurtBox : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("erm is this thing on");
-        if (collision.gameObject == attackPoint1 || collision.gameObject == attackPoint2 || collision.gameObject == attackPoint3)
-        {
-            Debug.Log("Self Collision");
-            return;
-        }
-    }
+    [PunRPC]
     public void Launch(float angle, int power, int direction)
     {
         // Convert angle from degrees to radians
