@@ -90,17 +90,17 @@ public class AttackBehavior : MonoBehaviourPunCallbacks
     }
     public void UpAir(GameObject reciever)
     {
-        PlayerMovement targetPhotonView = reciever.GetComponent<PlayerMovement>();
+        HurtBox targetPhotonView = reciever.GetComponent<HurtBox>();
 
         if (targetPhotonView != null)
         {
             // Update the percent on the target
-            this.photonView.RPC("UpdatePercent", targetPhotonView.photonPlayer, 5);
+            targetPhotonView.photonView.RPC("UpdatePercent", RpcTarget.All, 5);
 
             // Launch the target
             int power = (int)(10f + 0.2f * reciever.GetComponent<HurtBox>().percent);
             int direction = (int)this.transform.localScale.x;
-            this.photonView.RPC("Launch", targetPhotonView.photonPlayer, 90f, power, direction);
+            targetPhotonView.photonView.RPC("Launch", RpcTarget.All, 90f, power, direction);
         }
         else
         {
@@ -109,17 +109,17 @@ public class AttackBehavior : MonoBehaviourPunCallbacks
     }
     public void ForwardAir(GameObject receiver)
     {
-        PlayerMovement targetPhotonView = receiver.GetComponent<PlayerMovement>();
+        HurtBox targetPhotonView = receiver.GetComponent<HurtBox>();
 
         if (targetPhotonView != null)
         {
             // Update the percent on the target
-            this.photonView.RPC("UpdatePercent", targetPhotonView.photonPlayer, 10);
+            targetPhotonView.photonView.RPC("UpdatePercent", RpcTarget.All, 10);
 
             // Launch the target
             int power = (int)(5f + 0.5f * receiver.GetComponent<HurtBox>().percent);
             int direction = (int)this.transform.localScale.x;
-            this.photonView.RPC("Launch", targetPhotonView.photonPlayer, -90f, power, direction);
+            targetPhotonView.photonView.RPC("Launch", RpcTarget.All, -90f, power, direction);
         }
         else
         {
