@@ -2463,6 +2463,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 131010804840734090, guid: 124310a25d2625245ac582221dfee088, type: 3}
+      propertyPath: state
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2722644081432245898, guid: 124310a25d2625245ac582221dfee088, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3399,7 +3403,7 @@ GameObject:
   - component: {fileID: 1200962352}
   m_Layer: 0
   m_Name: Black
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5386,7 +5390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1883811594}
   - component: {fileID: 1883811595}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
