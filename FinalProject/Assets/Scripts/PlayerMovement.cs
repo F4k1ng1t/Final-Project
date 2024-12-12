@@ -1,3 +1,5 @@
+using Photon.Pun;
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -13,13 +15,17 @@ public enum State
     HITSTUN,
     INACTIONABLE
 }
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviourPunCallbacks
 {
     State state = State.IDLEAIR;
+
+    [HideInInspector]
+    public int id;
 
     [Header("Components")]
     public Rigidbody2D rig;
     public Animator animator;
+
     [Header("Movement Stats")]
     public float runSpeed;
     public float walkSpeed;
@@ -35,9 +41,9 @@ public class PlayerMovement : MonoBehaviour
     bool isJumping;
     int holdFrames = 0;
     int shortHopFrames = 3;
-    
 
-    float xPrevious= 0;
+    public Player photonPlayer;
+
 
     //Check for running
     bool isRunning = false;
@@ -49,8 +55,25 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    [PunRPC]
+    public void Initialize(Player player)
+    {
+        photonPlayer = player;
+        id = player.ActorNumber;
+
+        GameManager.instance.players[id - 1] = this;
+
+
+        if (!photonView.IsMine)
+            rig.isKinematic = true;
+    }
     void Update()
     {
+        if (!photonView.IsMine)
+        {
+            return;
+        }
         HandleInput();
     }
     void Run(float direction)
